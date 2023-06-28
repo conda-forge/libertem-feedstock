@@ -15,7 +15,7 @@ build:
     - libertem-server=libertem.web.cli:main
     - libertem-worker=libertem.executor.cli:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
