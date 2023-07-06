@@ -1,5 +1,5 @@
 {% set name = "libertem" %}
-{% set version = "0.11.1" %}
+{% set version = "0.11.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/libertem-{{ version }}.tar.gz
-  sha256: 886f09ba4596dc9600c320aba7eb9117613abaa607ad6a9241fe11a4951a6c55
+  sha256: 316687e02ec8dd804b1e54eee0b1055104084ef53d69cc52d012d12c57ac3424
 
 build:
-  skip: True  # [py<37]
+  skip: true  # [py<37]
   entry_points:
     - libertem-server=libertem.web.cli:main
     - libertem-worker=libertem.executor.cli:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -24,9 +24,9 @@ requirements:
   run:
     - python
     - numpy
-    - scipy <1.11
+    - scipy
     - sparse
-    - distributed >=2.19.0
+    - distributed >=2.19.0, !=2023.6.1
     - click
     - tornado >=5
     - matplotlib-base
@@ -39,7 +39,7 @@ requirements:
     - scikit-image
     - cloudpickle
     - jsonschema
-    - scikit-learn
+    - scikit-learn <1.3.0
     - tqdm
     - threadpoolctl >=3.0
     - nbformat
