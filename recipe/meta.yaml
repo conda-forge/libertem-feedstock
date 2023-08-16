@@ -45,14 +45,14 @@ requirements:
     - nbformat
     - nbconvert
     - autopep8
+    - pycodestyle<2.11
     - empyre >=0.3.0
     - defusedxml
-    - async_generator
     - typing-extensions
     - opentelemetry-api
     - tblib
     - tomli
-    - sparseconverter >=0.3.0
+    - sparseconverter >=0.3.3
 
 test:
   imports:
