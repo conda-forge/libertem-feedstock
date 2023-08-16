@@ -45,7 +45,7 @@ requirements:
     - nbformat
     - nbconvert
     - autopep8
-    - pycodestyle<2.11
+    - pycodestyle <2.11
     - empyre >=0.3.0
     - defusedxml
     - typing-extensions
