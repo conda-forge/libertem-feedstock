@@ -71,7 +71,7 @@ test:
     - pip
     - pytest >=6
     - pytest-cov
-    - pytest-asyncio >0.11, !0.22.0
+    - pytest-asyncio >0.11, !=0.22.0
     - pytest-xdist
     - pytest-env
     - pytest-benchmark
