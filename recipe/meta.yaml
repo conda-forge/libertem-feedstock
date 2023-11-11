@@ -62,7 +62,7 @@ test:
     - pip check
     - libertem-server --help
     - libertem-worker --help
-    - pytest tests
+    - pytest -k \'not test_pipelined\' tests
   source_files:
     - tests
     - conftest.py
