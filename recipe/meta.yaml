@@ -44,6 +44,7 @@ requirements:
     - threadpoolctl >=3.0
     - nbformat
     - nbconvert
+    - jupyter_core <5  # [py<39]
     - autopep8
     - pycodestyle <2.11
     - empyre >=0.3.0
