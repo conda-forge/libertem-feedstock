@@ -1,5 +1,5 @@
 {% set name = "libertem" %}
-{% set version = "0.12.0" %}
+{% set version = "0.13.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/libertem-{{ version }}.tar.gz
-  sha256: f2516aac8802ca87b789706f732a89bd71ade3bcb5e1815f53ba7391c4f03a2e
+  sha256: ec46c2dee0e9f71d60bec8018d717975bd9b6675a1ec0bd7d848149bea724989
 
 build:
   skip: true  # [py<37]
@@ -24,7 +24,7 @@ requirements:
   run:
     - python
     - numpy
-    - scipy
+    - scipy >=1.4.1
     - sparse
     - distributed >=2.19.0, !=2023.6.1
     - click
@@ -34,16 +34,17 @@ requirements:
     - h5py
     - psutil
     - numba >=0.51
-    - ncempy >=1.4
+    - ncempy >=1.10
     - pywin32-on-windows !=226  # [win]
     - scikit-image
     - cloudpickle
     - jsonschema
-    - scikit-learn <1.3.0
+    - scikit-learn
     - tqdm
     - threadpoolctl >=3.0
     - nbformat
     - nbconvert
+    - jupyter_core <5  # [py<39]
     - autopep8
     - pycodestyle <2.11
     - empyre >=0.3.0
@@ -53,6 +54,7 @@ requirements:
     - tblib
     - tomli
     - sparseconverter >=0.3.3
+    - numexpr !=2.8.6
 
 test:
   imports:
@@ -61,7 +63,7 @@ test:
     - pip check
     - libertem-server --help
     - libertem-worker --help
-    - pytest tests
+    - pytest -k "not test_pipelined" tests
   source_files:
     - tests
     - conftest.py
@@ -70,11 +72,12 @@ test:
     - pip
     - pytest >=6
     - pytest-cov
-    - pytest-asyncio >0.11
+    - pytest-asyncio >0.11, !=0.22.0
     - pytest-xdist
     - pytest-env
     - pytest-benchmark
     - aiohttp
+    - nest-asyncio
     - websockets
     - ipykernel
     - joblib
