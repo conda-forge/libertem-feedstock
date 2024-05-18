@@ -10,7 +10,7 @@ source:
   sha256: 2c18d38dd2b16fcceec50791a76a3c010f7a2b0eb7c34686b02e5cc2e5770694
 
 build:
-  skip: true  # [py<37]
+  skip: true  # [py<39]
   entry_points:
     - libertem-server=libertem.web.cli:main
     - libertem-worker=libertem.executor.cli:main
