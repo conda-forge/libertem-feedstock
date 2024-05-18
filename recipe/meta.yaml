@@ -55,6 +55,8 @@ requirements:
     - tomli
     - sparseconverter >=0.3.3
     - numexpr !=2.8.6
+    - ipympl
+    - jupyter-ui-poll
 
 test:
   imports:
