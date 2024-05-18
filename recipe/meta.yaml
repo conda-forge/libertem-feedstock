@@ -1,5 +1,5 @@
 {% set name = "libertem" %}
-{% set version = "0.13.1" %}
+{% set version = "0.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/libertem-{{ version }}.tar.gz
-  sha256: ec46c2dee0e9f71d60bec8018d717975bd9b6675a1ec0bd7d848149bea724989
+  sha256: 2c18d38dd2b16fcceec50791a76a3c010f7a2b0eb7c34686b02e5cc2e5770694
 
 build:
-  skip: true  # [py<37]
+  skip: true  # [py<39]
   entry_points:
     - libertem-server=libertem.web.cli:main
     - libertem-worker=libertem.executor.cli:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -55,6 +55,8 @@ requirements:
     - tomli
     - sparseconverter >=0.3.3
     - numexpr !=2.8.6
+    - ipympl
+    - jupyter-ui-poll
 
 test:
   imports:
