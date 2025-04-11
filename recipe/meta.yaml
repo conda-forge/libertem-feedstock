@@ -80,7 +80,7 @@ test:
     - pytest-benchmark
     - aiohttp
     - nest-asyncio
-    - websockets
+    - websockets <14
     - ipykernel
     - joblib
 
