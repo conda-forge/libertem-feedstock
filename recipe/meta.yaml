@@ -21,12 +21,13 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
     - numpy
     - scipy >=1.4.1
     - sparse
-    - distributed >=2.19.0, !=2023.6.1
+    - distributed >=2.19.0,!=2023.6.1
     - click
     - tornado >=5
     - matplotlib-base
@@ -74,7 +75,7 @@ test:
     - pip
     - pytest >=6
     - pytest-cov
-    - pytest-asyncio >0.11, !=0.22.0, <0.23.0
+    - pytest-asyncio >0.11,!=0.22.0,<0.23.0
     - pytest-xdist
     - pytest-env
     - pytest-benchmark
