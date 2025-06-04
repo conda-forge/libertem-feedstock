@@ -1,5 +1,5 @@
 {% set name = "libertem" %}
-{% set version = "0.14.2" %}
+{% set version = "0.15.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/libertem-{{ version }}.tar.gz
-  sha256: 54699acbc991712dd54d3616ac1f1c3f4d445f8747fb34cb33db29df79393330
+  sha256: fd3be06af768668b83eae37dd1b55ce3f122f8d24cdaa70ff61d8cf396f236f3
 
 build:
   skip: true  # [py<39]
@@ -15,7 +15,7 @@ build:
     - libertem-server=libertem.web.cli:main
     - libertem-worker=libertem.executor.cli:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
