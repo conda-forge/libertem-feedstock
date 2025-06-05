@@ -21,7 +21,7 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
+    - hatchling
   run:
     - python
     - numpy
@@ -34,7 +34,12 @@ requirements:
     - pillow
     - h5py
     - psutil
-    - numba >=0.51
+    - numba >=0.53  # [py<310]
+    - numba >=0.55  # [py==311]
+    - numba >=0.57  # [py==312]
+    - numba >=0.59  # [py==313]
+    - numba >=0.61  # [py==314]
+    - numba >=0.61  # [py>=314]
     - ncempy >=1.10
     - pywin32-on-windows !=226  # [win]
     - scikit-image
@@ -45,19 +50,17 @@ requirements:
     - threadpoolctl >=3.0
     - nbformat
     - nbconvert
-    - jupyter_core <5  # [py<39]
     - autopep8
-    - pycodestyle <2.11
-    - empyre >=0.3.0
     - defusedxml
     - typing-extensions
     - opentelemetry-api
     - tblib
     - tomli
-    - sparseconverter >=0.3.3
+    - sparseconverter >=0.4.0
     - numexpr !=2.8.6
     - ipympl
     - jupyter-ui-poll
+    - colorcet
 
 test:
   imports:
@@ -84,15 +87,14 @@ test:
     - websockets <14
     - ipykernel
     - joblib
+    - setuptools
 
 about:
   home: https://libertem.github.io/LiberTEM/
   summary: Open pixelated STEM framework
-  license: GPL-3.0-or-later AND MIT
+  license: MIT
   license_file:
     - LICENSE
-    - src/libertem/common/LICENSE
-    - src/libertem/io/LICENSE
   description: |
     LiberTEM is an open source platform for high-throughput distributed
     processing of large-scale binary data sets and live data streams
