@@ -70,7 +70,10 @@ test:
     - pip check
     - libertem-server --help
     - libertem-worker --help
-    - pytest -k "not test_pipelined" --deselect=tests/common/test_snooze.py::test_messages --deselect=tests/io/test_tiling_negotiation.py::test_multi_by_frame_wins --deselect=tests/test_context.py::test_dynamic_parameter_update_integration tests
+      # Strongly reduced tests to not run into memory limits with conda-forge CI
+      # These tests exercise a large fraction of LiberTEM, in particular
+      # covering many dependencies
+    - pytest -k "not test_pipelined" tests/server/test_job.py::test_rerun_com_analysis tests/io/datasets/test_raw_csr.py tests/io/datasets/test_hdf5.py
   source_files:
     - tests
     - conftest.py
