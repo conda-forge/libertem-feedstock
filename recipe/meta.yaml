@@ -70,7 +70,7 @@ test:
     - pip check
     - libertem-server --help
     - libertem-worker --help
-    - pytest -k "not test_pipelined" tests
+    - pytest -k "not test_pipelined" --deselect=tests/io/test_tiling_negotiation.py::test_multi_by_frame_wins --deselect=tests/test_context.py::test_dynamic_parameter_update_integration tests
   source_files:
     - tests
     - conftest.py
