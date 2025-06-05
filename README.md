@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libertem-feedst
 
 Home: https://libertem.github.io/LiberTEM/
 
-Package license: GPL-3.0-or-later AND MIT
+Package license: MIT
 
 Summary: Open pixelated STEM framework
 
