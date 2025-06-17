@@ -36,11 +36,11 @@ requirements:
     - h5py
     - psutil
     - numba >=0.53  # [py<310]
-    - numba >=0.55  # [py==311]
-    - numba >=0.57  # [py==312]
-    - numba >=0.59  # [py==313]
-    - numba >=0.61  # [py==314]
-    - numba >=0.61  # [py>=314]
+    - numba >=0.55  # [py==310]
+    - numba >=0.57  # [py==311]
+    - numba >=0.59  # [py==312]
+    - numba >=0.61  # [py==313]
+    - numba >=0.61  # [py>=313]
     - ncempy >=1.10
     - pywin32-on-windows !=226  # [win]
     - scikit-image
