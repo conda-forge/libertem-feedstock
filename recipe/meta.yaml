@@ -1,5 +1,5 @@
 {% set name = "libertem" %}
-{% set version = "0.15.2" %}
+{% set version = "0.16.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/libertem-{{ version }}.tar.gz
-  sha256: ef3cc2460fa5f8bbf1b39a847bf1008ad9d2f65c89d17fcc7e859c9772c33f72
+  sha256: ca427f2bf45022323b34bf2193a0d9f13867a7539d0dd9affa77f0d3e9cb9b6b
 
 build:
   skip: true  # [py<39]
