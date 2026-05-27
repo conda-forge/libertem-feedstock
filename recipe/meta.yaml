@@ -88,7 +88,7 @@ test:
     - pytest-benchmark
     - aiohttp
     - nest-asyncio
-    - websockets <14
+    - websockets
     - ipykernel
     - joblib
     - setuptools
